@@ -11,7 +11,7 @@ import streamlit as st # for ui
 # === PATH CONFIG ===
 PROJECTS_DIR = "video_generator"
 VOICE_PATH = "output/voiceover.mp3"
-API_KEY = "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"
+API_KEY = "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"
 APIFY_TOKEN = "apify_api_YJ0aGFeLj9iCc8s7EWHCDwaiwgYXRl1ZCWLJ"
 ACTOR_TASK_ID = "g.saisuchendra~text-to-image-generator-task"
 
