@@ -101,7 +101,7 @@ with st.form("video_form"):
                         }
                         url = f"https://api.apify.com/v2/actor-tasks/{ACTOR_TASK_ID}/run-sync-get-dataset-items?token={APIFY_TOKEN}"
                         res = requests.post(url, json=payload)
-                        print(res.json())
+                        st.write(res.json())
                         if 'image' in res.json()[0]:
                             base64_data = res.json()[0]['image'].split(",")[1]
                             img_data = BytesIO(base64.b64decode(base64_data))
