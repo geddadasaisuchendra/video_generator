@@ -11,7 +11,7 @@ import streamlit as st # for ui
 # === PATH CONFIG ===
 PROJECTS_DIR = "video_generator"
 VOICE_PATH = "output/voiceover.mp3"
-API_KEY = "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"
+API_KEY = "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"
 APIFY_TOKEN = "apify_api_YJ0aGFeLj9iCc8s7EWHCDwaiwgYXRl1ZCWLJ"
 ACTOR_TASK_ID = "g.saisuchendra~text-to-image-generator-task"
 
@@ -63,6 +63,7 @@ with st.form("video_form"):
                         data=json.dumps(payload),
                         timeout=30
                     )
+                    print(response.json())
                     message = response.json()["choices"][0]["message"]["content"]
                     audio_part =""
                     visual_part=""
