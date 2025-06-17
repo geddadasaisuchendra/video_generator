@@ -11,9 +11,9 @@ import streamlit as st # for ui
 # === PATH CONFIG ===
 PROJECTS_DIR = "video_generator"
 VOICE_PATH = "output/voiceover.mp3"
-API_KEY = "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"
-APIFY_TOKEN = "apify_api_YJ0aGFeLj9iCc8s7EWHCDwaiwgYXRl1ZCWLJ"
-ACTOR_TASK_ID = "g.saisuchendra~text-to-image-generator-task"
+API_KEY = st.secrets["openrouter"]["API_KEY"]
+APIFY_TOKEN = st.secrets["apify"]["APIFY_TOKEN"]
+ACTOR_TASK_ID = st.secrets["apify"]["ACTOR_TASK_ID"]
 
 
 # === Streamlit UI ===
