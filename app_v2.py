@@ -1,4 +1,7 @@
-'''import os   # for file manipulation
+'''
+#For local purpose
+
+import os   # for file manipulation
 import requests  # api call
 import json      # api call
 import base64    # image
@@ -134,7 +137,7 @@ with st.form("video_form"):
 '''
 
 
-
+#for deployement
 import os
 import requests
 import json
@@ -228,8 +231,8 @@ with st.form("video_form"):
                             }
                             url = f"https://api.apify.com/v2/actor-tasks/{st.secrets['apify']['ACTOR_TASK_ID']}/run-sync-get-dataset-items?token={st.secrets['apify']['APIFY_TOKEN']}"
                             res = requests.post(url, json=payload)
-                            
-                            if res.status_code == 200 and 'image' in res.json()[0]:
+                            print(res)
+                            if 'image' in res.json()[0]:
                                 base64_data = res.json()[0]['image'].split(",")[1]
                                 img_data = BytesIO(base64.b64decode(base64_data))
                                 img = Image.open(img_data)
